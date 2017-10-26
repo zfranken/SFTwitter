@@ -12,7 +12,7 @@ var TweetCollection = Backbone.Collection.extend({
 		
 	},
 	
-	url: 'http://localhost:8080/tweets',
+	url: 'https://frozen-plateau-10170.herokuapp.com/tweets',
 	
 	defaults: {
     count: 10
