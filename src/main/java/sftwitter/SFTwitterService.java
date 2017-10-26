@@ -56,7 +56,7 @@ public class SFTwitterService {
 		//get tweet images
 		MediaEntity[] media = status.getMediaEntities();
 		for(MediaEntity m : media){ 
-		    sfTweet.addTweetImageUrl(m.getMediaURL());
+		    sfTweet.addTweetImageUrl(m.getMediaURLHttps());
 		}
 		
 		return sfTweet;
