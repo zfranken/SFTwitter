@@ -1,0 +1,8 @@
+.project
+.gradle
+.classpath
+.settings
+build
+bin
+dist
+phantomjsdriver.log

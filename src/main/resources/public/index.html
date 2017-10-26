@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>... ... Challenge</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.0.0/jasmine.css"/>
+    </head>
+
+    <body>
+    	<div id="header">header</div>
+    	
+    	<div id="search">Search for: <input type="text" size="50" id="searchbox" name="searchbox"/><button id="searchbutton">Search</button><button id="clearsearchbutton">Clear</button></div>
+        
+        <div id="container">Loading...</div>
+        
+        <div id="footer">footer</div>
+        
+        
+        <script type="text/template" id="tweet-list-template">
+			<div class="tweetlist">
+				<ul id="tweetlistul">
+				<% for(var i=0; i< tweetCollection.models.length; i++) { %>
+					<% var tweet = tweetCollection.models[i].attributes %>
+					<li>
+						<div class="tweet-profile">
+						<%= tweet.userName %>						
+						@<%= tweet.screenName %>
+						<% if(tweet.profileImageUrl) { %>
+							<div class="tweetProfileImage"><img src="<%= tweet.profileImageUrl %>" />
+						<% } %>
+						</div>
+						<div class="tweet-text">
+						<%= tweet.tweetContent %>
+						</div>
+						<% if(tweet.tweetImageUrls.length > 0) { %>
+						<div class="tweet-images">
+						<% for(var j=0; j< tweet.tweetImageUrls.length; j++) { %>
+						<% var imageUrl = tweet.tweetImageUrls[j] %>
+							<img src="<%= imageUrl %>" />
+						<% } %>
+						</div>
+						<% } %>
+						<div class="tweet-metadata">
+							<% if(tweet.retweetCount) { %>
+							Retweeted <%= tweet.retweetCount %> times
+							<% } %>
+							<% var tweetdate = new Date(parseInt(tweet.tweetDate)) %>
+							Tweeted at <%= tweetdate %>
+						</div>
+					</li>
+				<% } %>
+				</ul>
+			</div>		
+		</script>
+		
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+        
+        <!-- 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.0.0/jasmine.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.0.0/jasmine-html.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.0.0/boot.js"></script>
+		 -->
+        <script src="sftwitter.js"></script>
+    </body>
+</html>
