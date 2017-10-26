@@ -46,7 +46,7 @@ gradlew test
 ## Running the frontend tests
 
 ```
-todo
+open src/test/js/SpecRunner.html in a browser
 ```
 
 

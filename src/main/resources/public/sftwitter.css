@@ -1,0 +1,35 @@
+body {
+    font-family: Helvetica,Arial,sans-serif;
+}
+
+#header {
+	font-size: 300%;
+	text-align: left;
+	background-color: #00a1e0;
+	color: #ffffff;
+	padding: 50px;
+}
+
+#footer {
+	font-size: 100%;
+	text-align: center;
+	background-color: #00a1e0;
+	color: #ffffff;
+	padding: 20px;
+}
+
+#search {
+	padding: 20px;
+}
+
+#tweetlistul {
+	
+}
+
+.tweetlistli {
+	
+}
+
+.tweetimage {
+	height: 250px;
+}

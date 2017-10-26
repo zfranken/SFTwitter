@@ -11,7 +11,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import sftwitter.SFTweet;
 import sftwitter.SFTwitterService;
 import twitter4j.Status;
-import twitter4j.TwitterException;
 import twitter4j.TwitterObjectFactory;
 
 @RunWith(SpringRunner.class)
