@@ -21,7 +21,7 @@ public class SFTwitterController {
 	@Autowired
 	SFTwitterService sfTwitterService;
 
-	@CrossOrigin(origins = {"http://localhost:8080","null"})
+	@CrossOrigin(origins = {"http://localhost:8080","https://frozen-plateau-10170.herokuapp.com","null"})
     @RequestMapping("/tweets")
     public List<SFTweet> topTweets(@RequestParam(required=false) Integer count) {
     	int numberOfTweets = defaultTweetCount;    	
