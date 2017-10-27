@@ -1,3 +1,7 @@
+html,body {
+    height:100%;
+}
+
 body {
     font-family: Helvetica,Arial,sans-serif;
 }
@@ -40,17 +44,17 @@ body {
 	list-style: none;
 }
 
-.tweetlistli {
-	
-}
-
 .tweet {
 	min-height: 150px;
 }
 
+.tweet-left {
+}
+
+.tweet-right {
+}
+
 .tweet-profile {
-	float: left;
-	width: 200px;
 }
 
 .tweetusername {
@@ -59,7 +63,8 @@ body {
 }
 
 .tweetscreenname {
-	font-weight: normal;
+	font-weight: bold;
+	font-size: 90%;
 	color: 657786;
 }
 
@@ -69,13 +74,14 @@ body {
 }
 
 .tweet-text {
+	float:none;
 	padding: 20px;
 	font-weight: bold;
-	color: #888888;
+	color: #555555;
 }
 
 .tweetimage {
-	height: 250px;
+	max-height: 200px;
 }
 
 .tweet-metadata {

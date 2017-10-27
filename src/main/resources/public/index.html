@@ -22,37 +22,39 @@
 					<% var tweet = tweetCollection.models[i].attributes %>
 					<li class="tweetlistli">
 					  <div class="tweet">
-						<div class="tweet-profile">
-						<% if(tweet.profileImageUrl) { %>
-							<div class="tweetProfileImage"><img src="<%= tweet.profileImageUrl %>" /></div>
-						<% } %>
-						<p class="tweetusername"><%= tweet.userName %></p>						
-						<p class="tweetscreenname">@<%= tweet.screenName %></p>						
-						</div>
+						
+							<div class="tweet-profile">
+								<% if(tweet.profileImageUrl) { %>
+									<div class="tweetProfileImage"><img src="<%= tweet.profileImageUrl %>" /></div>
+								<% } %>
+													
+							</div>
+							<div class="tweet-date">
+								<p class="tweetusername"><%= tweet.userName %></p>						
+								<p class="tweetscreenname">@<%= tweet.screenName %></p>	
+								<% var tweetdate = new Date(parseInt(tweet.tweetDate)) %>
+								<%= tweetdate %>
+							</div>
+							<div class="tweet-metadata">
+								<% if(tweet.retweetCount) { %>
+								Retweeted <%= tweet.retweetCount %> times
+								<% } %>							
+							</div>
+						
 
-						<div class="tweet-date">
-							<% var tweetdate = new Date(parseInt(tweet.tweetDate)) %>
-							<%= tweetdate %>
-						</div>
-						<div class="tweet-metadata">
-							<% if(tweet.retweetCount) { %>
-							Retweeted <%= tweet.retweetCount %> times
-							<% } %>							
-						</div>
+						
+							<div class="tweet-text">
+							<%= tweet.tweetContent %>
+							</div>
 
-						<div class="tweet-text">
-						<%= tweet.tweetContent %>
-						</div>
-
-						<% if(tweet.tweetImageUrls.length > 0) { %>
-						<div class="tweet-images">
-						<% for(var j=0; j< tweet.tweetImageUrls.length; j++) { %>
-						<% var imageUrl = tweet.tweetImageUrls[j] %>
-							<img class="tweetimage" src="<%= imageUrl %>" />
-						<% } %>
-						</div>
-						<% } %>
-
+							<% if(tweet.tweetImageUrls.length > 0) { %>
+							<div class="tweet-images">
+							<% for(var j=0; j< tweet.tweetImageUrls.length; j++) { %>
+							<% var imageUrl = tweet.tweetImageUrls[j] %>
+								<img class="tweetimage" src="<%= imageUrl %>" />
+							<% } %>
+							</div>
+							<% } %>
 						
 					  </div>
 					</li>
