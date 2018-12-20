@@ -6,18 +6,19 @@ var Tweet = Backbone.Model.extend({
 
 var TweetCollection = Backbone.Collection.extend({
 	model: Tweet,
-	
+
 	initialize: function() {
 		console.log("initialize tweets collection");
-		
+
 	},
-	
-	url: 'https://frozen-plateau-10170.herokuapp.com/tweets',
-	
+
+	// url: 'https://frozen-plateau-10170.herokuapp.com/tweets',
+	url: 'https://warm-falls-99793.herokuapp.com/api/twitter/tweets',
+
 	defaults: {
     count: 10
 	},
-	
+
 	filtered: function(query) {
 		console.log("filtering Tweet List");
 		var filteredTweetCollection = this.filter(function (tweet) {
@@ -34,7 +35,7 @@ var TweetListView = Backbone.View.extend({
 	model: TweetCollection,
 	template: '',
 	el: '#container',
-	
+
 	initialize: function() {
 		console.log("initialize tweetlist view");
 		//this.listenTo(this.model, "change", this.render);
@@ -44,10 +45,10 @@ var TweetListView = Backbone.View.extend({
 	render: function() {
 		console.log("rendering TweetListView");
 		this.$el.html(this.template(this.collection));
-		
+
 		return this;
 	},
-	
+
 //	filterTweets: function() {
 //		var query = $('#searchbox').val()
 //		console.log("filtering tweets (view):"+ query);
@@ -60,11 +61,11 @@ var TweetListView = Backbone.View.extend({
 //I'm sure there is a more "Backbone" way of doing this
 //But I clearly have a ways to go to get more familiar with Backbone
 $('#searchbutton').click(function(){
-	
+
 	//Grab the search query string from the input textbox
 	var query = $('#searchbox').val().toLowerCase();
-	console.log('searching for ' + query);	
-	
+	console.log('searching for ' + query);
+
 	//Find all tweet elements
     var ul = $("#tweetlistul");
     var tweets = ul.children('li');
@@ -87,7 +88,7 @@ $('#clearsearchbutton').click(function(){
 	$('#searchbutton').click();
 });
 
-// Enter key inside text box will trigger search 
+// Enter key inside text box will trigger search
 $('#searchbox').on('keyup', function (e) {
     if (e.keyCode == 13) {
     	$('#searchbutton').click();
